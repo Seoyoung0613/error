@@ -16,8 +16,8 @@ def new(request):
             post.published_date = timezone.now()
             post.save()
             return redirect('home')
-        else:
-            form = ContentForm()
+    else:
+        form = ContentForm()
     return render(request, 'new.html',{'form':form})
 
 def detail(request, index):
