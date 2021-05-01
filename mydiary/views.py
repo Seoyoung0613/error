@@ -34,8 +34,8 @@ def edit(request, index):
             post.published_date = timezone.now
             post.save()
             return redirect('edit', index=post.pk)
-        else:
-            form = ContentForm(instance=post)
+    else:
+        form = ContentForm(instance=post)
     return render(request, 'edit.html',{'form':form})
 
 def delete(request,pk):
